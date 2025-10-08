@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-800 hover:bg-secondary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-secondary-800 rounded-xl shadow-sm border border-secondary-700 p-6;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-secondary-600 bg-secondary-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white;
+  }
+
+  .sidebar {
+    @apply bg-secondary-800 border-secondary-700;
+  }
+
+  /* Markdown styling for chat messages */
+  .prose {
+    @apply text-gray-300;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    @apply text-white font-bold;
+  }
+
+  .prose strong {
+    @apply text-white font-semibold;
+  }
+
+  .prose code {
+    @apply bg-secondary-700 text-primary-300 px-1 py-0.5 rounded text-sm;
+  }
+
+  .prose pre {
+    @apply bg-secondary-900 p-3 rounded-lg overflow-x-auto;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-white;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply space-y-1;
+  }
+
+  .prose li {
+    @apply text-gray-300;
+  }
+
+  /* Flashcard specific styling */
+  .flashcard-prose {
+    @apply text-gray-300 leading-relaxed;
+  }
+
+  .flashcard-prose code {
+    @apply bg-secondary-700 text-green-300 px-1 py-0.5 rounded text-sm font-mono;
+  }
+
+  .flashcard-prose pre {
+    @apply bg-secondary-700 text-green-300 p-3 rounded-lg border border-secondary-600 overflow-x-auto;
+  }
+
+  .flashcard-prose strong {
+    @apply font-bold text-white;
+  }
+
+  /* Custom shadow for cards */
+  .shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Custom scrollbar for sidebar */
+  .sidebar-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Chat page specific scroll control */
+  .chat-page-container {
+    overflow: hidden;
+  }
+
+  .chat-page-container .chat-area {
+    overflow-y: auto;
+  }
+
+  /* Chat sidebar - prevent movement during page transitions */
+  .chat-sidebar-fixed {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Inline code styling - prevent full-width blocks */
+  .inline-code-compact {
+    display: inline !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    word-break: keep-all !important;
+    white-space: nowrap !important;
+  }
+
+  /* Force inline code to be small and compact */
+  .chat-message code:not(pre code) {
+    display: inline !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    font-size: 0.875rem !important;
+    padding: 0.125rem 0.25rem !important;
+    margin: 0 !important;
+    border-radius: 0.25rem !important;
+    background-color: rgba(139, 92, 246, 0.1) !important;
+    color: rgb(139, 92, 246) !important;
+    font-family: "Courier New", monospace !important;
+    line-height: 1 !important;
+    vertical-align: baseline !important;
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
